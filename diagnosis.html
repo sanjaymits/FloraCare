@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>AI Plant Diagnosis - Verdant Care</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#fcf9f4",
+                        "surface-container-highest": "#e5e2dd",
+                        "surface-variant": "#e5e2dd",
+                        "on-secondary-fixed-variant": "#394c2f",
+                        "secondary-fixed-dim": "#b6cda8",
+                        "inverse-primary": "#a9d293",
+                        "inverse-surface": "#31302d",
+                        "on-primary-container": "#98c083",
+                        "secondary-fixed": "#d2eac3",
+                        "surface-bright": "#fcf9f4",
+                        "on-surface-variant": "#43493e",
+                        "primary-fixed-dim": "#a9d293",
+                        "surface-dim": "#dcdad5",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1c1c19",
+                        "surface-container": "#f0ede8",
+                        "tertiary-fixed": "#ffdbce",
+                        "outline-variant": "#c3c8bb",
+                        "primary-fixed": "#c5efad",
+                        "secondary-container": "#d2eac3",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#506445",
+                        "surface-tint": "#446733",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#f4a182",
+                        "error-container": "#ffdad6",
+                        "primary": "#173809",
+                        "on-primary-fixed-variant": "#2d4f1e",
+                        "surface-container-low": "#f6f3ee",
+                        "error": "#ba1a1a",
+                        "on-background": "#1c1c19",
+                        "outline": "#73796d",
+                        "inverse-on-surface": "#f3f0eb",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#71361e",
+                        "on-secondary-container": "#566a4b",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#ebe8e3",
+                        "on-secondary-fixed": "#0e2008",
+                        "on-tertiary-fixed": "#380d00",
+                        "tertiary": "#55210a",
+                        "on-primary-fixed": "#062100",
+                        "primary-container": "#2d4f1e",
+                        "surface": "#fcf9f4",
+                        "on-tertiary-fixed-variant": "#71361e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "container-margin": "20px",
+                        "sm": "12px",
+                        "xl": "64px",
+                        "lg": "40px",
+                        "gutter": "16px",
+                        "base": "8px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "h1": ["Newsreader"],
+                        "h3": ["Newsreader"],
+                        "h2": ["Newsreader"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "caption": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "h1": ["40px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3 {
+            font-family: 'Newsreader', serif;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 16px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<link href="/manifest.json" rel="manifest"/><meta content="yes" name="apple-mobile-web-app-capable"/><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/><link href="icon-192.svg" rel="apple-touch-icon"/></head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-40 bg-background dark:bg-background">
+<div class="flex justify-between items-center px-container-margin py-base w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary font-h3 text-h3" data-icon="potted_plant">potted_plant</span>
+<h1 class="font-h3 text-h3 font-semibold text-primary dark:text-inverse-primary">Verdant Care</h1>
+</div>
+<button class="text-primary dark:text-inverse-primary hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined text-h3" data-icon="add_circle">add_circle</span>
+</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-container-margin py-md">
+<!-- Diagnosis Canvas Section -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: Diagnostic Interface -->
+<section class="md:col-span-8 flex flex-col gap-gutter">
+<div class="bg-surface-container-lowest rounded-xl p-lg shadow-sm border border-surface-container-highest/50">
+<h2 class="font-h2 text-h2 text-primary mb-sm">AI Plant Diagnosis</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">Capture a clear photo of the affected area for a precise botanical assessment.</p>
+<!-- Upload Area -->
+<div class="relative group cursor-pointer border-2 border-dashed border-outline-variant rounded-xl aspect-[16/9] mb-lg bg-surface-container-low flex flex-col items-center justify-center overflow-hidden hover:border-primary transition-colors">
+<img class="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity" data-alt="A macro close-up of a vibrant green Monstera leaf with subtle water droplets, captured in a clean and minimal studio setting. The lighting is soft and diffused, emphasizing the organic textures and natural veins of the leaf. The background is a crisp, warm-toned sand color, aligning with a professional botanical aesthetic. The overall mood is peaceful, expert, and deeply rooted in modern minimalist design principles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB475ca2qCVvnDCT8NrEy9jybbNErOeP7aWD8NBkXmxyLV29_sBasq_FaTIJeiQ0i-jcJCDRRn_6ABow6Oq9d_emzYFzrTtw4AX2gQ9SzYE7HVe-SyKidLI-_cRMKrKaabXj7XpcA8ML5hSLNmiN4R0ydlJh7WwB_4d2MDQcRSzTnOOqpSpYtxuhX1Rfkjao5UM8pk9uekcAa9HGwm1g0gnV4Xqb_WIA-E7Ekq_zDe0jNqvxjS2iiWKZQyIUddRN2svSUckw3vYLx8"/>
+<div class="z-10 flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-5xl mb-sm" data-icon="upload_file">upload_file</span>
+<span class="font-label-md text-label-md text-primary">Tap to upload or take a photo</span>
+<span class="font-caption text-caption text-outline">JPG, PNG up to 10MB</span>
+</div>
+</div>
+<!-- Symptom Selector -->
+<div class="mb-lg">
+<h3 class="font-label-md text-label-md text-on-surface mb-sm">What symptoms do you notice?</h3>
+<div class="flex flex-wrap gap-sm">
+<button class="px-md py-sm rounded-full bg-secondary-container text-on-secondary-container border border-outline-variant/30 font-label-md text-label-md hover:opacity-80 active:scale-95 transition-all">
+                                Yellow leaves
+                            </button>
+<button class="px-md py-sm rounded-full bg-surface-container text-on-surface-variant border border-outline-variant/30 font-label-md text-label-md hover:bg-secondary-container hover:text-on-secondary-container transition-all">
+                                Brown spots
+                            </button>
+<button class="px-md py-sm rounded-full bg-surface-container text-on-surface-variant border border-outline-variant/30 font-label-md text-label-md hover:bg-secondary-container hover:text-on-secondary-container transition-all">
+                                Wilting
+                            </button>
+<button class="px-md py-sm rounded-full bg-surface-container text-on-surface-variant border border-outline-variant/30 font-label-md text-label-md hover:bg-secondary-container hover:text-on-secondary-container transition-all">
+                                White mold
+                            </button>
+<button class="px-md py-sm rounded-full bg-surface-container text-on-surface-variant border border-outline-variant/30 font-label-md text-label-md hover:bg-secondary-container hover:text-on-secondary-container transition-all">
+                                Holes in leaves
+                            </button>
+<button class="px-md py-sm rounded-full bg-surface-container text-on-surface-variant border border-outline-variant/30 font-label-md text-label-md hover:bg-secondary-container hover:text-on-secondary-container transition-all">
+                                Sticky sap
+                            </button>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full py-md bg-primary text-on-primary rounded-xl font-label-md text-label-md shadow-sm hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="robot_2">robot_2</span>
+                        Run AI Diagnosis
+                    </button>
+</div>
+</section>
+<!-- Right Column: Past Diagnoses -->
+<aside class="md:col-span-4 flex flex-col gap-gutter">
+<div class="bg-surface-container-low rounded-xl p-md border border-surface-container-highest/50">
+<div class="flex items-center justify-between mb-md">
+<h3 class="font-h3 text-h3 text-primary">Past Diagnoses</h3>
+<span class="material-symbols-outlined text-outline" data-icon="history">history</span>
+</div>
+<div class="space-y-sm">
+<!-- History Item 1 -->
+<div class="p-sm bg-surface-container-lowest rounded-xl border border-outline-variant/20 hover:border-primary/50 cursor-pointer transition-colors">
+<div class="flex items-start gap-sm">
+<div class="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A close-up image of a Fiddle Leaf Fig showing signs of brown spots on its broad leaves. The lighting is realistic and natural, filtering through a window to create a domestic indoor garden scene. The focus is sharp on the damaged leaf texture, providing a clear clinical look for a diagnostic app. The background is a soft, blurred white wall, maintaining the minimalist and calm brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz_D6Q7m9klPLTsHMZgi7gpzLxVsxdEo782MMtF-epCK-irq19CNL1bQk8SMCOo0rqyrEiYOq7ZSPt_NjolSnYL_lYVFenj5CwXwShGJVGqbBiUEyYp1RaeIGuzwLolx--6ESxTRjI3ljA4HCfliRptxYb7idnwnayVurwWxQ21NEUPvR5mmhkLlEUzP5EXXppnq9uKvOgoVyvehqtuYJNAh26yy4gzsr6FNNIgZLDLRI89OmP4VIX9uI92p6iH7mcuKGF837Gjq4"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h4 class="font-label-md text-label-md text-on-surface">Fiddle Leaf Fig</h4>
+<span class="font-caption text-caption text-outline">Oct 12</span>
+</div>
+<p class="font-caption text-caption text-error flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="error">error</span>
+                                        Root Rot Detected
+                                    </p>
+</div>
+</div>
+</div>
+<!-- History Item 2 -->
+<div class="p-sm bg-surface-container-lowest rounded-xl border border-outline-variant/20 hover:border-primary/50 cursor-pointer transition-colors">
+<div class="flex items-start gap-sm">
+<div class="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A healthy macro view of a Snake Plant's upright, sword-like leaves with yellow borders. The image is bright and clean, lit by soft morning sunlight that emphasizes the sculptural beauty of the plant. The aesthetic is modern and professional, fitting for a premium plant care application. The colors are vibrant yet naturally balanced, against a neutral sand-colored backdrop that feels serene and organized." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqqtU2nH4_kZhIx8DlOyafs962MpWpGNBeWkMZJTXCX-SneQTQWp1MfOtQ-vEX3DKMo_AywvJLUUssQK68MDYl4GPau0kERoaA5blWNfVSYPXhmRnjnG_rgwqOAapTkqSJDiHrU9RvEKJLnTF6MZosjojN3RoUXyfPhyDeQbDxPa1-zjpPaFBErxzgeq1yMO2a5k2rPA5p3_tzUcFbpW4D0scQ7QGyRt3DPpM3-nWPR59dHAu2V2hZdfVMkitGnx2e1Re3qmG9m1E"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h4 class="font-label-md text-label-md text-on-surface">Snake Plant</h4>
+<span class="font-caption text-caption text-outline">Sep 28</span>
+</div>
+<p class="font-caption text-caption text-on-primary-container flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+                                        Healthy Status
+                                    </p>
+</div>
+</div>
+</div>
+<!-- History Item 3 -->
+<div class="p-sm bg-surface-container-lowest rounded-xl border border-outline-variant/20 hover:border-primary/50 cursor-pointer transition-colors">
+<div class="flex items-start gap-sm">
+<div class="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A detailed shot of a Peace Lily with slightly drooping leaves and brown tips. The photography uses a soft focus on the background to highlight the specific areas of distress on the foliage. The lighting is cool and balanced, creating an expert botanical record feel. The overall scene is peaceful but informative, using high-end minimalist styling that emphasizes plant health over cluttered decor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClNfIteGQTGR3ZfLGfVAypZatjAsaNnC-MHy2glwglt1AtpdtZfO0C1SkLHlSnhPabrT3VC7JNfhYvv-xrZHYUIg9OqtW000ig14DcH3hADvKzBj_rxVs0Rh_YJjNPnD-l3x0RRkIxuWW06980PhkR513HVq_3dsrwL2_Ldnei_5UdBGuKVzUQ2fPHmXIxbflGwFI0B1WWvCx0BHQV8JGVPYt0pW_HDneT9aCbjT1a8E55PrvF7XE0pbKD5HabRncFROl5sXg1i0Q"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h4 class="font-label-md text-label-md text-on-surface">Peace Lily</h4>
+<span class="font-caption text-caption text-outline">Aug 15</span>
+</div>
+<p class="font-caption text-caption text-tertiary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="opacity">opacity</span>
+                                        Under-watering
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full mt-lg py-sm text-primary font-label-md text-label-md hover:bg-surface-container-high rounded-lg transition-colors">
+                        View All History
+                    </button>
+</div>
+<!-- AI Tips Card -->
+<div class="bg-primary text-on-primary rounded-xl p-md shadow-sm">
+<h3 class="font-label-md text-label-md mb-xs flex items-center gap-2">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="tips_and_updates">tips_and_updates</span>
+                        Pro Gardener Tip
+                    </h3>
+<p class="font-caption text-caption text-on-primary-container leading-relaxed">
+                        90% of diagnosis requests involve "Yellow leaves" which is often caused by over-watering. Always check the soil moisture 2 inches deep before watering.
+                    </p>
+</div>
+</aside>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface-container-low/90 backdrop-blur-md shadow-sm rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed active:scale-90 transition-transform duration-200" href="index.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Garden</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed active:scale-90 transition-transform duration-200" href="identify.html">
+<span class="material-symbols-outlined" data-icon="center_focus_strong">center_focus_strong</span>
+<span class="font-label-md text-label-md">Identify</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-primary-container text-on-secondary-container dark:text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-transform duration-200" href="diagnosis.html">
+<span class="material-symbols-outlined" data-icon="medical_services" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+<span class="font-label-md text-label-md">Diagnosis</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary dark:hover:text-primary-fixed active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/service-worker.js");
+}
+
+var selectedSymptoms = [];
+var uploadedImage = null;
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Symptom buttons toggle
+  document.querySelectorAll(".flex.flex-wrap.gap-sm button").forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      var sym = this.textContent.trim();
+      var idx = selectedSymptoms.indexOf(sym);
+      if (idx >= 0) {
+        selectedSymptoms.splice(idx, 1);
+        this.classList.remove("bg-primary", "text-on-primary");
+        this.classList.add("bg-surface-container", "text-on-surface-variant");
+      } else {
+        selectedSymptoms.push(sym);
+        this.classList.remove("bg-surface-container", "text-on-surface-variant", "bg-secondary-container", "text-on-secondary-container");
+        this.classList.add("bg-primary", "text-on-primary");
+      }
+    });
+  });
+
+  // Upload area click
+  var uploadArea = document.querySelector(".border-dashed");
+  if (uploadArea) {
+    uploadArea.addEventListener("click", function() {
+      var input = document.createElement("input");
+      input.type = "file"; input.accept = "image/*";
+      input.onchange = function(e) {
+        var file = e.target.files[0];
+        if (!file) return;
+        var reader = new FileReader();
+        reader.onload = function(ev) {
+          uploadedImage = {base64: ev.target.result.split(",")[1], mime: file.type, src: ev.target.result};
+          uploadArea.style.backgroundImage = "url(" + ev.target.result + ")";
+          uploadArea.style.backgroundSize = "cover";
+          uploadArea.style.backgroundPosition = "center";
+          uploadArea.querySelector(".z-10").style.opacity = "0";
+        };
+        reader.readAsDataURL(file);
+      };
+      input.click();
+    });
+  }
+
+  // Run Diagnosis button
+  var diagBtn = document.querySelector("button.w-full.py-md.bg-primary");
+  if (diagBtn) {
+    diagBtn.addEventListener("click", runDiagnosis);
+  }
+});
+
+var resultOverlay = document.createElement("div");
+resultOverlay.style.cssText = "display:none;position:fixed;inset:0;background:rgba(28,28,25,0.85);z-index:100;overflow-y:auto;padding:24px;";
+document.body.appendChild(resultOverlay);
+
+async function runDiagnosis() {
+  if (!uploadedImage && selectedSymptoms.length === 0) {
+    alert("Please upload a photo or select symptoms first.");
+    return;
+  }
+  resultOverlay.innerHTML = '<div style="background:#fcf9f4;border-radius:24px;padding:32px;max-width:420px;margin:40px auto;text-align:center;"><div style="font-size:48px;margin-bottom:16px;">🔬</div><h2 style="font-family:Newsreader,serif;font-size:24px;color:#173809;margin-bottom:8px;">Running AI Diagnosis...</h2><p style="color:#43493e;font-size:14px;">Analyzing plant health</p></div>';
+  resultOverlay.style.display = "block";
+
+  try {
+    var body = {symptoms: selectedSymptoms};
+    if (uploadedImage) { body.imageBase64 = uploadedImage.base64; body.mimeType = uploadedImage.mime; }
+    var res = await fetch("/api/diagnose", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(body) });
+    var d = await res.json();
+    if (d.error) throw new Error(d.error);
+
+    var sevColor = d.severity === "Severe" ? "#ba1a1a" : d.severity === "Moderate" ? "#e65100" : "#2d4f1e";
+    var treatmentList = (d.treatment || []).map(function(t){ return '<li style="margin-bottom:6px;">• ' + t + '</li>'; }).join("");
+    var causesList = (d.causes || []).map(function(c){ return '<li style="margin-bottom:4px;">• ' + c + '</li>'; }).join("");
+
+    resultOverlay.innerHTML = '<div style="background:#fcf9f4;border-radius:24px;max-width:420px;margin:40px auto;overflow:hidden;">' +
+      (uploadedImage ? '<img src="' + uploadedImage.src + '" style="width:100%;height:180px;object-fit:cover;">' : '') +
+      '<div style="padding:24px;">' +
+      '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">' +
+      '<span style="background:' + sevColor + ';color:white;padding:4px 14px;border-radius:9999px;font-size:12px;font-weight:700;">' + (d.severity || "Moderate") + '</span>' +
+      '<span style="color:#73796d;font-size:12px;">' + (d.confidence || 75) + '% confidence</span></div>' +
+      '<h2 style="font-family:Newsreader,serif;font-size:24px;color:#173809;margin-bottom:8px;">' + (d.diagnosis || "Unknown Issue") + '</h2>' +
+      '<p style="color:#43493e;font-size:14px;line-height:1.6;margin-bottom:16px;">' + (d.description || "") + '</p>' +
+      (causesList ? '<div style="background:#ffdad6;border-radius:12px;padding:14px;margin-bottom:14px;"><strong style="color:#ba1a1a;font-size:13px;">Possible Causes</strong><ul style="color:#43493e;font-size:13px;margin-top:6px;list-style:none;padding:0;">' + causesList + '</ul></div>' : '') +
+      (treatmentList ? '<div style="background:#d2eac3;border-radius:12px;padding:14px;margin-bottom:14px;"><strong style="color:#173809;font-size:13px;">Treatment Steps</strong><ul style="color:#43493e;font-size:13px;margin-top:6px;list-style:none;padding:0;">' + treatmentList + '</ul></div>' : '') +
+      (d.estimatedRecovery ? '<p style="color:#73796d;font-size:13px;margin-bottom:16px;">⏱ Estimated recovery: ' + d.estimatedRecovery + '</p>' : '') +
+      '<button onclick="document.querySelector(\'[style*=fixed]\').style.display=\'none\'" style="width:100%;background:#173809;color:white;border:none;padding:14px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;">Close</button>' +
+      '</div></div>';
+  } catch(err) {
+    resultOverlay.innerHTML = '<div style="background:#fcf9f4;border-radius:24px;padding:32px;max-width:420px;margin:40px auto;text-align:center;"><div style="font-size:48px;">😔</div><h2 style="font-family:Newsreader,serif;font-size:24px;color:#ba1a1a;">Diagnosis failed</h2><p style="color:#43493e;font-size:14px;margin:12px 0 24px;">Please try again.</p><button onclick="document.querySelector(\'[style*=fixed]\').style.display=\'none\'" style="background:#173809;color:white;border:none;padding:14px 32px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;">Close</button></div>';
+  }
+}
+</script>
+
+</body></html>

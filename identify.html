@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#fcf9f4",
+                    "surface-container-highest": "#e5e2dd",
+                    "surface-variant": "#e5e2dd",
+                    "on-secondary-fixed-variant": "#394c2f",
+                    "secondary-fixed-dim": "#b6cda8",
+                    "inverse-primary": "#a9d293",
+                    "inverse-surface": "#31302d",
+                    "on-primary-container": "#98c083",
+                    "secondary-fixed": "#d2eac3",
+                    "surface-bright": "#fcf9f4",
+                    "on-surface-variant": "#43493e",
+                    "primary-fixed-dim": "#a9d293",
+                    "surface-dim": "#dcdad5",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-surface": "#1c1c19",
+                    "surface-container": "#f0ede8",
+                    "tertiary-fixed": "#ffdbce",
+                    "outline-variant": "#c3c8bb",
+                    "primary-fixed": "#c5efad",
+                    "secondary-container": "#d2eac3",
+                    "tertiary-fixed-dim": "#ffb59a",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#506445",
+                    "surface-tint": "#446733",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#f4a182",
+                    "error-container": "#ffdad6",
+                    "primary": "#173809",
+                    "on-primary-fixed-variant": "#2d4f1e",
+                    "surface-container-low": "#f6f3ee",
+                    "error": "#ba1a1a",
+                    "on-background": "#1c1c19",
+                    "outline": "#73796d",
+                    "inverse-on-surface": "#f3f0eb",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#71361e",
+                    "on-secondary-container": "#566a4b",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#ebe8e3",
+                    "on-secondary-fixed": "#0e2008",
+                    "on-tertiary-fixed": "#380d00",
+                    "tertiary": "#55210a",
+                    "on-primary-fixed": "#062100",
+                    "primary-container": "#2d4f1e",
+                    "surface": "#fcf9f4",
+                    "on-tertiary-fixed-variant": "#71361e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "24px",
+                    "container-margin": "20px",
+                    "sm": "12px",
+                    "xl": "64px",
+                    "lg": "40px",
+                    "gutter": "16px",
+                    "base": "8px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "caption": ["Plus Jakarta Sans"],
+                    "h1": ["Newsreader"],
+                    "h3": ["Newsreader"],
+                    "h2": ["Newsreader"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "h1": ["40px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .scan-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #c5efad, transparent);
+            box-shadow: 0 0 15px #c5efad;
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            animation: scan 3s ease-in-out infinite;
+        }
+        @keyframes scan {
+            0%, 100% { top: 10%; opacity: 0; }
+            50% { top: 90%; opacity: 1; }
+        }
+        .camera-overlay {
+            background: radial-gradient(circle, transparent 40%, rgba(28, 28, 25, 0.4) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<link href="/manifest.json" rel="manifest"/><meta content="yes" name="apple-mobile-web-app-capable"/><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/><link href="icon-192.svg" rel="apple-touch-icon"/><link href="/manifest.json" rel="manifest"/><meta content="yes" name="apple-mobile-web-app-capable"/><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/><link href="icon-192.svg" rel="apple-touch-icon"/><title>Verdant Care - Identify Plant</title></head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col overflow-hidden">
+<!-- Top Navigation Anchor -->
+<header class="w-full top-0 sticky z-50 bg-background dark:bg-background">
+<div class="flex justify-between items-center px-container-margin py-base w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary" style="font-size: 28px;">potted_plant</span>
+<h1 class="font-h3 text-h3 font-semibold text-primary dark:text-inverse-primary">Verdant Care</h1>
+</div>
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined text-on-surface-variant dark:text-on-surface-variant">add_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Viewfinder Content -->
+<main class="flex-grow flex flex-col relative bg-surface-dim">
+<!-- Viewfinder Canvas -->
+<div class="relative w-full h-[574px] overflow-hidden bg-black">
+<img alt="Plant Identification View" class="absolute inset-0 w-full h-full object-cover opacity-90" data-alt="A lush, detailed close-up of a Monstera Deliciosa plant leaf showing deep green textures and natural perforations. The scene is shot from a mobile camera's perspective with soft, natural morning light filtering through a nearby window. The atmosphere is calm and professional, emphasizing the vibrant botanical colors and the clean, high-end organic aesthetic of the plant care application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKCaDNN-ikcWQ6DoN8XaOqKdTDqK7zchxmXYV3GKcw3K-Hfn1_Jv4oY2fI0aom6F21T1pMZVwxE6Mc3Ipw8dx2USauII8WSHV5j24khynLxpR27tsvm-9cttn4nslgSw79MeE1vnamTRl0qSjoE_T6r2S9VNwWbggRdF78onpBD8lk1wd4G0K0bXsJcU11ypGOWmn5Vf8-B3o3Pid4dyBznL1GhZMxTlkQsIZ1EDBI1zAL1yFen_X1iyOCAjLOi0Shy5HY-4URAN4"/>
+<!-- Scanning Graphics -->
+<div class="absolute inset-0 camera-overlay flex items-center justify-center">
+<!-- Framing Corners -->
+<div class="w-64 h-64 border-2 border-white/30 rounded-3xl relative">
+<div class="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-primary-fixed rounded-tl-xl"></div>
+<div class="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-primary-fixed rounded-tr-xl"></div>
+<div class="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-primary-fixed rounded-bl-xl"></div>
+<div class="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-primary-fixed rounded-br-xl"></div>
+<div class="scan-line"></div>
+</div>
+</div>
+<!-- Contextual Overlay: Photography Tips -->
+<div class="absolute top-md left-1/2 -translate-x-1/2 w-[90%] max-w-sm">
+<div class="bg-surface-container-lowest/90 backdrop-blur-md rounded-xl p-sm shadow-sm flex items-center gap-sm border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary">light_mode</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Ensure good lighting</p>
+<p class="text-caption text-on-surface-variant">Center the leaf for better results</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Camera Controls Surface -->
+<div class="flex-grow bg-background rounded-t-[32px] -mt-8 relative z-10 px-container-margin pt-lg pb-xl flex flex-col items-center justify-between">
+<!-- Gallery Picker & Shutter Group -->
+<div class="w-full flex justify-between items-center max-w-md mx-auto">
+<!-- Gallery Picker -->
+<button class="w-12 h-12 rounded-xl bg-surface-container overflow-hidden border border-outline-variant hover:opacity-80 transition-all">
+<img alt="Gallery preview" class="w-full h-full object-cover" data-alt="A small square thumbnail image of a collection of potted succulents arranged neatly on a wooden shelf. The lighting is warm and golden, evoking a cozy home gardening atmosphere. The aesthetic is consistent with a modern, minimalist plant care application focusing on growth and nurturing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyWv1dekaCAdFmLO7CGmgj8folOy-FLgCOW0z2zPWGQXJWkqS-3OvBOXTzsZnDx0c-908IeUDBewJmbMDJMR5nnmSUEVUAQXh1h0uvhphr6niW2VjsUWflVq1Goira-FARdvWBXbeE0EWT0SAD3R5aWQlnpnow-QH5rgKVgai6434gEy6W5kDVhTwrvWUrGu6Z4OhZjteZSC-JJBHrlVWolRnyUb8h5Pv2is6-HThMydJ8BkQQoNmguyMU4eG1QiZsPNJHzb7PSLM"/>
+</button>
+<!-- Shutter Button -->
+<div class="relative flex items-center justify-center p-xs border-2 border-primary rounded-full group cursor-pointer active:scale-95 transition-transform duration-200">
+<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-size: 32px;">photo_camera</span>
+</div>
+</div>
+<!-- Flash Toggle -->
+<button class="w-12 h-12 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">flash_off</span>
+</button>
+</div>
+<!-- Recent Identification History Hint -->
+<div class="mt-lg w-full max-w-md">
+<p class="text-caption text-on-surface-variant text-center mb-sm">OR IDENTIFY FROM RECENT</p>
+<div class="flex gap-sm justify-center">
+<div class="w-16 h-16 rounded-xl bg-surface-container-high relative overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A macro photograph of a healthy, waxy Fiddle Leaf Fig leaf with prominent veins. The color is a vibrant emerald green set against a clean, off-white background, maintaining the high-end minimalist design language of a plant care specialist." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPGxJiym-r4BMDwJc3xtlBHUPP_QnJf-xcqVA4T7YsgChnqaE6u4iYOdhc3ns_tjI4Cnrv05a8sKozcfw897V0KKLvzR725fcrrE_PKqEUBVUXP_Jfizmsm3In9cpBwm4JKg1Dk-IBZKHhiedrk6YJCvwvYZ_EfMvqw4k12k_49zucMkjxBIs5Z5w5wd-JPQYb3GbZWGC4AtaJzk6OFTM0Xcl_7DZjoPgiAA3xBFGHnBRgrZVsKF83PosSgll7uVdSfvcOaJnzHqU"/>
+</div>
+<div class="w-16 h-16 rounded-xl bg-surface-container-high relative overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close-up of a diverse succulent arrangement in a terracotta pot. The soft pastel greens and purples of the plants are emphasized by bright, natural lighting. The mood is serene and educational, fitting for an expert botanical diagnostic app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDecTMgD6Y_amalhIfQ-qAyGGyD52132Kq0pO_F3w6cwiZ9bbfIQ-NAaHRXsnArjO0goRtlFJ3Kr1JsRBzvgX10t0TAofIz9oRQOJyGOeNvo8S3berx7VjYx7qA20Sf7ictN3nlwj1tPf4BNT-M-H6k6h4fFxTIK5E8e191lUROGhrQpGSEvLjXsYjybpecnbUqN0Zwt_iY6wtBeJlK5mUPd1PfeIclz1U5SCxm2uwFUQNljOsOosv8_is0K4GW49XGaa-Xm4nG1J0"/>
+</div>
+<div class="w-16 h-16 rounded-xl bg-surface-container-high relative overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-crop" data-alt="Detailed view of a Snake Plant's vertical, variegated leaves showing sharp architectural lines. The lighting is crisp and clear, highlighting the pattern of the plant in a clean, professional studio setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaGnD8FmUMTljcfrQxuJtHER2E6mvJ8DyXCQn3XvDAJS-BnmcHdSH4ifoPPeDw3E_UXIWGNmO5FnjcpGIOFLhVVQ9UWpQoOTe5L198Rr36invDfqG3BYoAhc8ydC71Q2aNiOe94YD2E88GFIVpM0XqFyC8tT-q8tCA-zp2m386VpvM3NvWa_K6hbwnnV2DCphLs5oz1v6qqWK6ahebOiARFF5rSGnEZ5d5JZlREaHDyk2NXhr3JUHbDFBAqJwPNeY4N2A2kQp1AQA"/>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface-container-low/90 backdrop-blur-md flex justify-around items-center px-4 py-3 pb-safe shadow-sm rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary transition-all active:scale-90 duration-200" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Garden</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-primary-container text-on-secondary-container dark:text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-transform duration-200" href="identify.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">center_focus_strong</span>
+<span class="font-label-md text-label-md">Identify</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary transition-all active:scale-90 duration-200" href="diagnosis.html">
+<span class="material-symbols-outlined">medical_services</span>
+<span class="font-label-md text-label-md">Diagnosis</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/service-worker.js");
+}
+
+const resultOverlay = document.createElement("div");
+resultOverlay.id = "ai-result";
+resultOverlay.style.cssText = "display:none;position:fixed;inset:0;background:rgba(28,28,25,0.85);z-index:100;overflow-y:auto;padding:24px;";
+document.body.appendChild(resultOverlay);
+
+function showLoading() {
+  resultOverlay.innerHTML = '<div style="background:#fcf9f4;border-radius:24px;padding:32px;max-width:420px;margin:40px auto;text-align:center;"><div style="font-size:48px;margin-bottom:16px;">🌿</div><h2 style="font-family:Newsreader,serif;font-size:24px;color:#173809;margin-bottom:8px;">Analyzing Plant...</h2><p style="color:#43493e;font-size:14px;">Our AI is identifying your plant</p><div style="margin-top:24px;height:4px;background:#e5e2dd;border-radius:9999px;overflow:hidden;"><div id="prog" style="height:100%;background:#173809;border-radius:9999px;width:0%;transition:width 2s;"></div></div></div>';
+  resultOverlay.style.display = "block";
+  setTimeout(() => { var p = document.getElementById("prog"); if(p) p.style.width="80%"; }, 100);
+}
+
+function showResult(plant, imgSrc) {
+  resultOverlay.innerHTML = '<div style="background:#fcf9f4;border-radius:24px;max-width:420px;margin:40px auto;overflow:hidden;"><img src="' + imgSrc + '" style="width:100%;height:220px;object-fit:cover;"><div style="padding:24px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;"><span style="background:#d2eac3;color:#566a4b;padding:4px 12px;border-radius:9999px;font-size:12px;font-weight:600;">' + (plant.family || "Plant") + '</span><span style="color:#73796d;font-size:12px;">' + (plant.confidence || 85) + '% match</span></div><h2 style="font-family:Newsreader,serif;font-size:28px;color:#173809;margin:8px 0 4px;">' + (plant.commonName || "Unknown Plant") + '</h2><p style="color:#43493e;font-size:13px;font-style:italic;margin-bottom:12px;">' + (plant.scientificName || "") + '</p><p style="color:#43493e;font-size:14px;line-height:1.6;margin-bottom:20px;">' + (plant.description || "") + '</p><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;"><div style="background:#f0ede8;border-radius:12px;padding:12px;text-align:center;"><div style="font-size:20px;">☀️</div><div style="font-size:11px;color:#43493e;margin-top:4px;">Light</div><div style="font-size:13px;font-weight:600;color:#173809;">' + (plant.care && plant.care.light || "Moderate") + '</div></div><div style="background:#f0ede8;border-radius:12px;padding:12px;text-align:center;"><div style="font-size:20px;">💧</div><div style="font-size:11px;color:#43493e;margin-top:4px;">Water</div><div style="font-size:13px;font-weight:600;color:#173809;">' + (plant.wateringSchedule || plant.care && plant.care.water || "Weekly") + '</div></div></div><button onclick="saveAndGo(\'' + (plant.commonName || "").replace(/'/g,"") + '\',\'' + (plant.scientificName || "").replace(/'/g,"") + '\')" style="width:100%;background:#173809;color:white;border:none;padding:14px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;margin-bottom:10px;">Add to My Garden 🌱</button><button onclick="document.getElementById(\'ai-result\').style.display=\'none\'" style="width:100%;background:#f0ede8;color:#173809;border:none;padding:14px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;">Try Another Photo</button></div></div>';
+  resultOverlay.style.display = "block";
+}
+
+function showError(msg) {
+  resultOverlay.innerHTML = '<div style="background:#fcf9f4;border-radius:24px;padding:32px;max-width:420px;margin:40px auto;text-align:center;"><div style="font-size:48px;margin-bottom:16px;">😔</div><h2 style="font-family:Newsreader,serif;font-size:24px;color:#ba1a1a;">Could not identify</h2><p style="color:#43493e;font-size:14px;margin:12px 0 24px;">' + msg + '</p><button onclick="document.getElementById(\'ai-result\').style.display=\'none\'" style="background:#173809;color:white;border:none;padding:14px 32px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;">Try Again</button></div>';
+}
+
+function saveAndGo(name, scientific) {
+  try { var p=JSON.parse(localStorage.getItem("myGarden")||"[]"); p.push({name,scientific,added:new Date().toISOString()}); localStorage.setItem("myGarden",JSON.stringify(p)); } catch(e){}
+  alert(name + " added to your garden!");
+  window.location.href = "index.html";
+}
+
+async function identifyPlant(file) {
+  showLoading();
+  var reader = new FileReader();
+  reader.onload = async function(e) {
+    var base64 = e.target.result.split(",")[1];
+    var mimeType = file.type || "image/jpeg";
+    try {
+      var res = await fetch("/api/identify", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({imageBase64:base64,mimeType}) });
+      var plant = await res.json();
+      if (plant.error) throw new Error(plant.error);
+      showResult(plant, e.target.result);
+    } catch(err) {
+      showError("Try a clearer photo with good lighting.");
+    }
+  };
+  reader.readAsDataURL(file);
+}
+
+function pickFile(camera) {
+  var input = document.createElement("input");
+  input.type = "file"; input.accept = "image/*";
+  if (camera) input.capture = "environment";
+  input.onchange = function(e) { if(e.target.files[0]) identifyPlant(e.target.files[0]); };
+  input.click();
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  var shutter = document.querySelector(".w-16.h-16.bg-primary.rounded-full");
+  var gallery = document.querySelector(".w-12.h-12.rounded-xl.bg-surface-container.overflow-hidden");
+  if (shutter) shutter.addEventListener("click", function() { pickFile(true); });
+  if (gallery) gallery.addEventListener("click", function() { pickFile(false); });
+});
+</script>
+
+</body></html>

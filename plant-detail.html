@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/><link href="/manifest.json" rel="manifest"/><meta content="yes" name="apple-mobile-web-app-capable"/><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/><link href="icon-192.svg" rel="apple-touch-icon"/>
+<title>Verdant Care - Monstera Deliciosa</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#fcf9f4",
+                        "surface-container-highest": "#e5e2dd",
+                        "surface-variant": "#e5e2dd",
+                        "on-secondary-fixed-variant": "#394c2f",
+                        "secondary-fixed-dim": "#b6cda8",
+                        "inverse-primary": "#a9d293",
+                        "inverse-surface": "#31302d",
+                        "on-primary-container": "#98c083",
+                        "secondary-fixed": "#d2eac3",
+                        "surface-bright": "#fcf9f4",
+                        "on-surface-variant": "#43493e",
+                        "primary-fixed-dim": "#a9d293",
+                        "surface-dim": "#dcdad5",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1c1c19",
+                        "surface-container": "#f0ede8",
+                        "tertiary-fixed": "#ffdbce",
+                        "outline-variant": "#c3c8bb",
+                        "primary-fixed": "#c5efad",
+                        "secondary-container": "#d2eac3",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#506445",
+                        "surface-tint": "#446733",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#f4a182",
+                        "error-container": "#ffdad6",
+                        "primary": "#173809",
+                        "on-primary-fixed-variant": "#2d4f1e",
+                        "surface-container-low": "#f6f3ee",
+                        "error": "#ba1a1a",
+                        "on-background": "#1c1c19",
+                        "outline": "#73796d",
+                        "inverse-on-surface": "#f3f0eb",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#71361e",
+                        "on-secondary-container": "#566a4b",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#ebe8e3",
+                        "on-secondary-fixed": "#0e2008",
+                        "on-tertiary-fixed": "#380d00",
+                        "tertiary": "#55210a",
+                        "on-primary-fixed": "#062100",
+                        "primary-container": "#2d4f1e",
+                        "surface": "#fcf9f4",
+                        "on-tertiary-fixed-variant": "#71361e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "container-margin": "20px",
+                        "sm": "12px",
+                        "xl": "64px",
+                        "lg": "40px",
+                        "gutter": "16px",
+                        "base": "8px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "h1": ["Newsreader"],
+                        "h3": ["Newsreader"],
+                        "h2": ["Newsreader"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "caption": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "h1": ["40px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "h2": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+        .growth-ring {
+            background: conic-gradient(#173809 75%, #e5e2dd 0);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-40 bg-background dark:bg-background">
+<div class="flex justify-between items-center px-container-margin py-base w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary" data-icon="potted_plant">potted_plant</span>
+<h1 class="font-h3 text-h3 font-semibold text-primary dark:text-inverse-primary">Verdant Care</h1>
+</div>
+<div class="flex items-center gap-md">
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="share">share</span>
+</button>
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary" data-icon="add_circle">add_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto pb-xl">
+<!-- Hero Section -->
+<section class="relative w-full h-[397px] md:h-[530px] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A lush, vibrant Monstera Deliciosa plant with iconic fenestrated leaves standing in a minimalist terracotta pot. The background is a clean, bright white wall with soft, natural morning sunlight casting gentle shadows. The overall aesthetic is tranquil and high-end, focusing on the deep emerald greens of the healthy plant foliage in a modern light-mode setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPfPSHdE-V0hIPxJIc5RLEhEWH1_dOtgs5TEPabww1s7W60ADHKo6PWi0y42Nx2oL1XJIB0Wuv4mbXM-XprlR_sbd5zMEtnVTQsCOE4IoB68tTJdEOG5L3FZqHdW4hlhcNrxcwPE5f_m-8m1JU1Jn5cyyv0QLWQVr45dhkPZradEXSUfh4dcm6Ue2WMNPsMwuW2c5mbQrWI4FktFyV5T3u_hCsAYKYHrgTCUUgfkbz7xtFuKgGWYObZ-AT_9uWw9QqcjqjAc-ngkM"/>
+<div class="absolute bottom-0 left-0 w-full p-container-margin bg-gradient-to-t from-background to-transparent pt-xl">
+<div class="flex flex-col gap-xs">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-md w-fit">Araceae Family</span>
+<h2 class="font-h1 text-h1 text-primary">Monstera Deliciosa</h2>
+</div>
+</div>
+</section>
+<div class="px-container-margin flex flex-col gap-lg mt-md">
+<!-- Key Stats Row -->
+<div class="grid grid-cols-3 gap-gutter">
+<div class="bg-surface-container-low p-md rounded-xl flex flex-col items-center gap-sm text-center">
+<span class="material-symbols-outlined text-primary" data-icon="light_mode">light_mode</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Light</p>
+<p class="font-body-md text-body-md font-semibold">Bright Indirect</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-md rounded-xl flex flex-col items-center gap-sm text-center">
+<span class="material-symbols-outlined text-primary" data-icon="water_drop">water_drop</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Water</p>
+<p class="font-body-md text-body-md font-semibold">Every 7 Days</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-md rounded-xl flex flex-col items-center gap-sm text-center">
+<span class="material-symbols-outlined text-primary" data-icon="device_thermostat">device_thermostat</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">Temp</p>
+<p class="font-body-md text-body-md font-semibold">18° - 30°C</p>
+</div>
+</div>
+</div>
+<!-- Bento Layout Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Left Column: Watering & Schedule -->
+<div class="md:col-span-5 flex flex-col gap-lg">
+<!-- Watering Schedule Card -->
+<div class="bg-surface-container-lowest border border-surface-variant p-md rounded-xl shadow-sm flex flex-col gap-md">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-xs">
+<h3 class="font-h3 text-h3 text-primary">Watering Schedule</h3>
+<p class="text-on-surface-variant text-body-md">Next watering due in 2 days</p>
+</div>
+<div class="w-12 h-12 rounded-full growth-ring flex items-center justify-center">
+<div class="w-10 h-10 bg-surface-container-lowest rounded-full flex items-center justify-center">
+<span class="text-caption font-bold text-primary">75%</span>
+</div>
+</div>
+</div>
+<div class="flex gap-sm">
+<button class="flex-1 bg-primary text-on-primary py-3 rounded-xl font-label-md hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-base">
+<span class="material-symbols-outlined" data-icon="opacity">opacity</span>
+                                Mark as Watered
+                            </button>
+<button class="bg-secondary-container text-on-secondary-container p-3 rounded-xl hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+</button>
+</div>
+</div>
+<!-- Health Indicator -->
+<div class="bg-surface-container-low p-md rounded-xl flex flex-col gap-sm">
+<div class="flex justify-between items-center">
+<span class="font-label-md text-primary">Plant Health</span>
+<span class="text-primary font-bold">Excellent</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-primary-fixed-dim to-primary h-full w-[92%]"></div>
+</div>
+<p class="text-caption text-on-surface-variant">Last leaf growth observed 4 days ago.</p>
+</div>
+</div>
+<!-- Right Column: Care Instructions -->
+<div class="md:col-span-7 flex flex-col gap-lg">
+<div class="bg-surface-container-low p-lg rounded-xl flex flex-col gap-md">
+<h3 class="font-h3 text-h3 text-primary">Care Instructions</h3>
+<div class="space-y-md">
+<div class="flex gap-md">
+<div class="bg-secondary-container p-2 rounded-lg h-fit">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="eco">eco</span>
+</div>
+<div>
+<h4 class="font-label-md text-primary mb-1">Humidity &amp; Mist</h4>
+<p class="text-body-md text-on-surface-variant">Monsteras love high humidity. Mist leaves twice weekly or use a pebble tray to mimic their native tropical environment.</p>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="bg-secondary-container p-2 rounded-lg h-fit">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="cleaning_services">cleaning_services</span>
+</div>
+<div>
+<h4 class="font-label-md text-primary mb-1">Leaf Cleaning</h4>
+<p class="text-body-md text-on-surface-variant">Wipe leaves with a damp cloth every month to remove dust and ensure maximum photosynthesis efficiency.</p>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="bg-secondary-container p-2 rounded-lg h-fit">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="grid_view">grid_view</span>
+</div>
+<div>
+<h4 class="font-label-md text-primary mb-1">Support Structures</h4>
+<p class="text-body-md text-on-surface-variant">As a climber, your Monstera will thrive with a moss pole or trellis to encourage larger, fenestrated leaves.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Plant Diary Section -->
+<section class="flex flex-col gap-md">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="font-h2 text-h2 text-primary">Plant Diary</h3>
+<p class="text-on-surface-variant">Track your Monstera's growth journey</p>
+</div>
+<button class="text-primary font-label-md flex items-center gap-xs">
+                        View All <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Diary Entry 1 -->
+<div class="flex flex-col gap-sm">
+<div class="aspect-square rounded-xl overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Close-up photography of a new, bright green Monstera leaf unfurling. The lighting is soft and warm, highlighting the delicate textures of the young foliage. The composition is artistic and macro-focused, emphasizing the growth and vitality of the houseplant within a modern, botanical-themed UI design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3FNBBHCcXZtPngTqM4LvdJwW0DcXMEpLAOtf8zRS5hW6nGPI2difp3u21U3Qy1s4f9ZRgEHGzjQt8FXzJrNjypVGgQdY7CbBIDPmTge7doONOTpmU66CjnM-1T4hNf5EeMy18gM7bJE5oRgq3jm3GB_lzR-SZrA-nB_Qh1_GDaJ8dspWH3_DS28gL8YJ24I7oif5ZQjZAKai6IK52peLW-hLHOEHVnSQMFIknopub1ykerLg9nUEN6m7J3nmEOQ0gqP1UruCHqa0"/>
+</div>
+<div>
+<p class="text-caption text-primary">Oct 12, 2023</p>
+<p class="font-label-md text-on-surface truncate">New leaf unfurling!</p>
+</div>
+</div>
+<!-- Diary Entry 2 -->
+<div class="flex flex-col gap-sm">
+<div class="aspect-square rounded-xl overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A Monstera Deliciosa plant standing elegantly next to a large window in a bright, modern living room. The scene is filled with airy, natural light, creating a serene and sophisticated atmosphere. The plant is the focal point, with its large leaves creating beautiful silhouettes against the light background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_y-41IyucrcSxWoWHYstu8RqYPDpQ1rz1Qzd2oi29Vavrb5WHUtfwrYB_iVM-Tcksc3IP8dWirb1pp88OW8TJZYNdO5TpE6uz7c29K_dqR7yBh_vLnTN3ixlE8heUJbxSYTx0l6OEc1XKAEciB_kZuPByLFsKxxIy3GQfTd0e7hYmnoT5QeCBdO0woucWygq-hEP5odKStGkP-c-J0c3uZfRU-pCbA5BnPt2nBae23vFOjS6qSes02tmUthlwDfRKjV_NSZHPDyc"/>
+</div>
+<div>
+<p class="text-caption text-primary">Sep 28, 2023</p>
+<p class="font-label-md text-on-surface truncate">Repotted to a larger home</p>
+</div>
+</div>
+<!-- Add Entry Button -->
+<button class="aspect-square rounded-xl border-2 border-dashed border-surface-variant flex flex-col items-center justify-center gap-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[32px]" data-icon="add_a_photo">add_a_photo</span>
+<span class="font-label-md">Add Note</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface-container-low/90 backdrop-blur-md shadow-sm rounded-t-xl md:hidden">
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-primary-container text-on-secondary-container dark:text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-transform duration-200" href="index.html">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Garden</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary active:scale-90 transition-transform duration-200" href="identify.html">
+<span class="material-symbols-outlined" data-icon="center_focus_strong">center_focus_strong</span>
+<span class="font-label-md text-label-md">Identify</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary active:scale-90 transition-transform duration-200" href="diagnosis.html">
+<span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
+<span class="font-label-md text-label-md">Diagnosis</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<script>if("serviceWorker" in navigator){navigator.serviceWorker.register("/service-worker.js");}</script>
+</body></html>
